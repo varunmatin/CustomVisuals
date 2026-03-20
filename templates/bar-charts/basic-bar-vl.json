@@ -1,0 +1,77 @@
+{
+  "$schema": "https://deneb-viz.github.io/schema/deneb-template-usermeta-v1.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.6.0",
+      "metaVersion": 1,
+      "provider": "Vega-Lite",
+      "providerVersion": "5.6.0"
+    },
+    "information": {
+      "name": "Basic Bar Chart",
+      "description": "A simple vertical bar chart with category and measure. Supports tooltips and conditional formatting on hover.",
+      "author": "",
+      "uuid": "00000000-0000-0000-0000-000000000001",
+      "generated": "2024-01-01T00:00:00.000Z"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Category",
+        "description": "The category dimension (e.g. product, region, date)",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "Value",
+        "description": "The numeric measure to display as bar height",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "bar": { "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3 },
+    "axis": {
+      "grid": false,
+      "domainColor": "#cccccc",
+      "tickColor": "#cccccc",
+      "labelColor": "#666666",
+      "titleColor": "#333333"
+    },
+    "view": { "stroke": null }
+  },
+  "data": { "name": "dataset" },
+  "mark": {
+    "type": "bar",
+    "tooltip": true
+  },
+  "encoding": {
+    "x": {
+      "field": "__0__",
+      "type": "nominal",
+      "sort": "-y",
+      "axis": { "labelAngle": -30, "title": null }
+    },
+    "y": {
+      "field": "__1__",
+      "type": "quantitative",
+      "axis": { "title": null, "format": ",.0f" }
+    },
+    "color": {
+      "condition": { "test": "datum['__0__'] === pbiCrossFilteredValues", "value": "#118DFF" },
+      "value": "#118DFF"
+    },
+    "opacity": {
+      "condition": { "param": "highlight", "value": 1 },
+      "value": 0.7
+    }
+  },
+  "params": [
+    {
+      "name": "highlight",
+      "select": { "type": "point", "on": "mouseover" }
+    }
+  ]
+}

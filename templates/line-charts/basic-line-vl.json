@@ -1,0 +1,79 @@
+{
+  "$schema": "https://deneb-viz.github.io/schema/deneb-template-usermeta-v1.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.6.0",
+      "metaVersion": 1,
+      "provider": "Vega-Lite",
+      "providerVersion": "5.6.0"
+    },
+    "information": {
+      "name": "Basic Line Chart",
+      "description": "A clean line chart with points, suitable for time series or ordered categories.",
+      "author": "",
+      "uuid": "00000000-0000-0000-0000-000000000002",
+      "generated": "2024-01-01T00:00:00.000Z"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Date",
+        "description": "The date or ordered category for the x-axis",
+        "type": "dateTime",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "Value",
+        "description": "The numeric measure to plot as a line",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "grid": true,
+      "gridColor": "#f0f0f0",
+      "domainColor": "#cccccc",
+      "tickColor": "#cccccc",
+      "labelColor": "#666666"
+    },
+    "view": { "stroke": null }
+  },
+  "data": { "name": "dataset" },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2,
+        "color": "#118DFF"
+      },
+      "encoding": {
+        "x": {
+          "field": "__0__",
+          "type": "temporal",
+          "axis": { "title": null, "format": "%b %Y", "labelAngle": -30 }
+        },
+        "y": {
+          "field": "__1__",
+          "type": "quantitative",
+          "axis": { "title": null, "format": ",.0f" }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 60,
+        "color": "#118DFF",
+        "tooltip": true
+      },
+      "encoding": {
+        "x": { "field": "__0__", "type": "temporal" },
+        "y": { "field": "__1__", "type": "quantitative" }
+      }
+    }
+  ]
+}

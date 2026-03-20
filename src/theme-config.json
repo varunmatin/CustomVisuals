@@ -1,0 +1,51 @@
+{
+  "_comment": "Shared Vega-Lite config block. Paste into the 'config' key of any template to apply consistent theming.",
+  "config": {
+    "background": "transparent",
+    "font": "Segoe UI, sans-serif",
+    "title": {
+      "font": "Segoe UI, sans-serif",
+      "fontSize": 14,
+      "fontWeight": "bold",
+      "color": "#252423"
+    },
+    "axis": {
+      "labelFont": "Segoe UI, sans-serif",
+      "labelFontSize": 11,
+      "labelColor": "#605E5C",
+      "titleFont": "Segoe UI, sans-serif",
+      "titleFontSize": 12,
+      "titleColor": "#252423",
+      "gridColor": "#F3F2F1",
+      "domainColor": "#C8C6C4",
+      "tickColor": "#C8C6C4"
+    },
+    "legend": {
+      "labelFont": "Segoe UI, sans-serif",
+      "labelFontSize": 11,
+      "labelColor": "#605E5C",
+      "titleFont": "Segoe UI, sans-serif",
+      "titleFontSize": 12,
+      "titleColor": "#252423"
+    },
+    "view": {
+      "stroke": null
+    },
+    "bar": {
+      "cornerRadiusTopLeft": 2,
+      "cornerRadiusTopRight": 2
+    },
+    "range": {
+      "category": [
+        "#118DFF",
+        "#12239E",
+        "#E66C37",
+        "#6B007B",
+        "#E044A7",
+        "#744EC2",
+        "#D9B300",
+        "#D64550"
+      ]
+    }
+  }
+}

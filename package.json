@@ -1,0 +1,19 @@
+{
+  "name": "powerbi-deneb-custom-visuals",
+  "version": "1.0.0",
+  "description": "JSON templates for Deneb custom visuals in Power BI",
+  "scripts": {
+    "validate": "node scripts/validate-templates.js",
+    "lint": "node scripts/lint-vega.js",
+    "build": "node scripts/build-templates.js"
+  },
+  "keywords": [
+    "power-bi",
+    "deneb",
+    "vega",
+    "vega-lite",
+    "custom-visuals",
+    "data-visualization"
+  ],
+  "license": "MIT"
+}

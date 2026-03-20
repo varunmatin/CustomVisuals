@@ -1,0 +1,68 @@
+{
+  "$schema": "https://deneb-viz.github.io/schema/deneb-template-usermeta-v1.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.6.0",
+      "metaVersion": 1,
+      "provider": "Vega-Lite",
+      "providerVersion": "5.6.0"
+    },
+    "information": {
+      "name": "KPI Card",
+      "description": "A simple KPI card showing a primary metric value with a label. Customize colors via config.",
+      "author": "",
+      "uuid": "00000000-0000-0000-0000-000000000003",
+      "generated": "2024-01-01T00:00:00.000Z"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Metric Label",
+        "description": "The label for the KPI metric",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "Value",
+        "description": "The numeric value to display",
+        "type": "numeric",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "view": { "stroke": null },
+    "background": "transparent"
+  },
+  "data": { "name": "dataset" },
+  "layer": [
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 36,
+        "fontWeight": "bold",
+        "color": "#118DFF",
+        "dy": -10
+      },
+      "encoding": {
+        "text": { "field": "__1__", "type": "quantitative", "format": ",.0f" },
+        "x": { "value": { "expr": "width / 2" } },
+        "y": { "value": { "expr": "height / 2" } }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 14,
+        "color": "#666666",
+        "dy": 24
+      },
+      "encoding": {
+        "text": { "field": "__0__", "type": "nominal" },
+        "x": { "value": { "expr": "width / 2" } },
+        "y": { "value": { "expr": "height / 2" } }
+      }
+    }
+  ]
+}
