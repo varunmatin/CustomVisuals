@@ -16,7 +16,8 @@ CustomVisuals/
 │   ├── scatter-plots/      # Scatter and bubble chart variations
 │   ├── tables/             # Table and matrix variations
 │   ├── cards/              # KPI card and summary visual variations
-│   └── combo-charts/       # Combination chart variations
+│   ├── combo-charts/       # Combination chart variations
+│   └── hierarchies/        # Tree / org-chart hierarchy visuals
 ├── src/                    # Shared Vega/Vega-Lite components and configs
 ├── scripts/                # Utility scripts for validation and building
 └── docs/                   # Additional documentation
@@ -78,6 +79,7 @@ Each template is a `.json` file that can be imported directly into the Deneb vis
 | `tables/` | Formatted tables, heatmap tables, conditional formatting |
 | `cards/` | KPI cards, summary tiles, metric displays |
 | `combo-charts/` | Bar+line, dual axis, layered charts |
+| `hierarchies/` | Tree layouts, org charts, data ownership chains |
 
 ## Vega vs Vega-Lite
 

@@ -1,0 +1,308 @@
+{
+  "$schema": "https://deneb-viz.github.io/schema/deneb-template-usermeta-v1.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.6.0",
+      "metaVersion": 1,
+      "provider": "Vega",
+      "providerVersion": "5.22.1"
+    },
+    "information": {
+      "name": "Data Estate — People Chain Hierarchy",
+      "description": "Executive-style top-down org chart for data ownership hierarchies. Displays people chain nodes as dark-themed cards with depth-coded accent colours. Requires a flat table with id, name, parent, and value (role label) columns.",
+      "author": "Chief Data Office",
+      "uuid": "a3f1b2c4-9e7d-4a6b-8c3f-1d2e5f607a8b",
+      "generated": "2026-03-20T00:00:00.000Z"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "id",
+        "description": "Unique identifier for each node (e.g. '1', 'sarah_mitchell'). Root node must have a blank/null parent.",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "name",
+        "description": "Display name shown on the node card (e.g. 'Sarah Mitchell').",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__2__",
+        "name": "parent",
+        "description": "The id of the parent node. Leave blank or null for the root node.",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__3__",
+        "name": "value",
+        "description": "Role or category label shown above the name (e.g. 'EXECUTIVE SPONSOR', 'DOMAIN OWNER'). Use uppercase for best results.",
+        "type": "text",
+        "kind": "column"
+      }
+    ]
+  },
+
+  "description": "Data Estate People Chain — Executive Hierarchy Visual",
+  "width": 1000,
+  "height": 700,
+  "padding": 5,
+  "background": "#0e1120",
+
+  "signals": [
+    { "name": "nW",   "value": 148, "description": "Node card width in px. Increase if names are long." },
+    { "name": "nH",   "value": 60,  "description": "Node card height in px." },
+    { "name": "tPad", "value": 44,  "description": "Top padding reserved for the section title." },
+    { "name": "bPad", "value": 22,  "description": "Bottom padding." }
+  ],
+
+  "data": [
+    {
+      "name": "dataset"
+    },
+    {
+      "name": "nodes",
+      "source": "dataset",
+      "transform": [
+        {
+          "type": "stratify",
+          "key": "__0__",
+          "parentKey": "__2__"
+        },
+        {
+          "type": "tree",
+          "method": "tidy",
+          "size": [
+            { "signal": "width - nW" },
+            { "signal": "height - tPad - bPad - nH" }
+          ],
+          "separation": true,
+          "as": ["_x", "_y", "depth", "children"]
+        },
+        {
+          "type": "formula",
+          "expr": "datum._x + nW / 2",
+          "as": "x"
+        },
+        {
+          "type": "formula",
+          "expr": "datum._y + tPad + nH / 2",
+          "as": "y"
+        }
+      ]
+    },
+    {
+      "name": "links",
+      "source": "nodes",
+      "transform": [
+        { "type": "treelinks" },
+        {
+          "type": "linkpath",
+          "orient": "vertical",
+          "shape": "orthogonal"
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "accent",
+      "type": "ordinal",
+      "domain": [0, 1, 2, 3, 4, 5, 6, 7],
+      "range": [
+        "#d4af37",
+        "#4a90d9",
+        "#e07b39",
+        "#9b59b6",
+        "#27ae60",
+        "#e74c3c",
+        "#16a085",
+        "#f39c12"
+      ]
+    },
+    {
+      "name": "card",
+      "type": "ordinal",
+      "domain": [0, 1, 2, 3, 4, 5, 6, 7],
+      "range": [
+        "#1b2557",
+        "#122d44",
+        "#2a1d3f",
+        "#182a1e",
+        "#361e1e",
+        "#142e2e",
+        "#2a2018",
+        "#1c2540"
+      ]
+    }
+  ],
+
+  "marks": [
+    {
+      "description": "Section title",
+      "type": "text",
+      "encode": {
+        "update": {
+          "x":           { "value": 0 },
+          "y":           { "value": 20 },
+          "text":        { "value": "PEOPLE CHAIN  —  DATA OWNERSHIP" },
+          "fill":        { "value": "#5a6a8a" },
+          "fontSize":    { "value": 9 },
+          "fontWeight":  { "value": "400" },
+          "font":        { "value": "Segoe UI, sans-serif" },
+          "letterSpacing": { "value": 2.5 },
+          "align":       { "value": "left" }
+        }
+      }
+    },
+    {
+      "description": "Thin rule below section title",
+      "type": "rule",
+      "encode": {
+        "update": {
+          "x":           { "value": 0 },
+          "x2":          { "signal": "width" },
+          "y":           { "value": 30 },
+          "stroke":      { "value": "#1e2a45" },
+          "strokeWidth": { "value": 1 }
+        }
+      }
+    },
+    {
+      "description": "Connector lines between nodes",
+      "type": "path",
+      "from": { "data": "links" },
+      "encode": {
+        "update": {
+          "path":          { "field": "path" },
+          "stroke":        { "value": "#2a3860" },
+          "strokeWidth":   { "value": 1.5 },
+          "strokeOpacity": { "value": 0.9 }
+        }
+      }
+    },
+    {
+      "description": "Node glow / outer shadow ring",
+      "type": "rect",
+      "from": { "data": "nodes" },
+      "encode": {
+        "update": {
+          "x":             { "signal": "datum.x - nW/2 - 2" },
+          "y":             { "signal": "datum.y - nH/2 - 2" },
+          "width":         { "signal": "nW + 4" },
+          "height":        { "signal": "nH + 4" },
+          "fill":          { "scale": "accent", "field": "depth" },
+          "opacity":       { "value": 0.1 },
+          "cornerRadius":  { "value": 6 }
+        }
+      }
+    },
+    {
+      "description": "Node card background",
+      "type": "rect",
+      "from": { "data": "nodes" },
+      "encode": {
+        "update": {
+          "x":             { "signal": "datum.x - nW/2" },
+          "y":             { "signal": "datum.y - nH/2" },
+          "width":         { "signal": "nW" },
+          "height":        { "signal": "nH" },
+          "fill":          { "scale": "card",   "field": "depth" },
+          "stroke":        { "scale": "accent", "field": "depth" },
+          "strokeWidth":   { "value": 0.8 },
+          "strokeOpacity": { "value": 0.45 },
+          "cornerRadius":  { "value": 3 }
+        }
+      }
+    },
+    {
+      "description": "Top accent bar (full width, 2 px)",
+      "type": "rect",
+      "from": { "data": "nodes" },
+      "encode": {
+        "update": {
+          "x":                    { "signal": "datum.x - nW/2" },
+          "y":                    { "signal": "datum.y - nH/2" },
+          "width":                { "signal": "nW" },
+          "height":               { "value": 2 },
+          "fill":                 { "scale": "accent", "field": "depth" },
+          "cornerRadiusTopLeft":  { "value": 3 },
+          "cornerRadiusTopRight": { "value": 3 }
+        }
+      }
+    },
+    {
+      "description": "Left accent strip (3 px)",
+      "type": "rect",
+      "from": { "data": "nodes" },
+      "encode": {
+        "update": {
+          "x":                      { "signal": "datum.x - nW/2" },
+          "y":                      { "signal": "datum.y - nH/2 + 2" },
+          "width":                  { "value": 3 },
+          "height":                 { "signal": "nH - 2" },
+          "fill":                   { "scale": "accent", "field": "depth" },
+          "cornerRadiusBottomLeft": { "value": 3 }
+        }
+      }
+    },
+    {
+      "description": "Role / category label (value field) — coloured, uppercase",
+      "type": "text",
+      "from": { "data": "nodes" },
+      "encode": {
+        "update": {
+          "x":            { "signal": "datum.x - nW/2 + 11" },
+          "y":            { "signal": "datum.y - nH/2 + 15" },
+          "text":         { "field": "__3__" },
+          "fill":         { "scale": "accent", "field": "depth" },
+          "fontSize":     { "value": 7.5 },
+          "fontWeight":   { "value": "700" },
+          "font":         { "value": "Segoe UI, sans-serif" },
+          "letterSpacing":{ "value": 0.9 },
+          "limit":        { "signal": "nW - 16" },
+          "align":        { "value": "left" },
+          "opacity":      { "value": 0.95 }
+        }
+      }
+    },
+    {
+      "description": "Thin divider below the role label",
+      "type": "rule",
+      "from": { "data": "nodes" },
+      "encode": {
+        "update": {
+          "x":             { "signal": "datum.x - nW/2 + 10" },
+          "x2":            { "signal": "datum.x + nW/2 - 8" },
+          "y":             { "signal": "datum.y - nH/2 + 22" },
+          "stroke":        { "scale": "accent", "field": "depth" },
+          "strokeWidth":   { "value": 0.4 },
+          "strokeOpacity": { "value": 0.3 }
+        }
+      }
+    },
+    {
+      "description": "Person / node name — main text, centred",
+      "type": "text",
+      "from": { "data": "nodes" },
+      "encode": {
+        "update": {
+          "x":          { "signal": "datum.x" },
+          "y":          { "signal": "datum.y + 9" },
+          "text":       { "field": "__1__" },
+          "fill":       { "value": "#dde3f5" },
+          "fontSize":   { "value": 12.5 },
+          "fontWeight": { "value": "600" },
+          "font":       { "value": "Segoe UI, sans-serif" },
+          "limit":      { "signal": "nW - 16" },
+          "align":      { "value": "center" },
+          "baseline":   { "value": "middle" }
+        }
+      }
+    }
+  ]
+}
