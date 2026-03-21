@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" style="background:#0e1120; font-family: Segoe UI, sans-serif;">
+
+  <!-- Section title -->
+  <text x="16" y="22" fill="#5a6a8a" font-size="9" font-weight="400" letter-spacing="2.5">PEOPLE CHAIN  —  DATA OWNERSHIP</text>
+  <line x1="0" y1="30" x2="1000" y2="30" stroke="#1e2a45" stroke-width="1"/>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  CONNECTOR LINES (orthogonal)                  -->
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <!-- Root → L1 left -->
+  <path d="M 500 134 L 500 155 L 222 155 L 222 175" stroke="#2a3860" stroke-width="1.5" fill="none" stroke-opacity="0.9"/>
+  <!-- Root → L1 center -->
+  <path d="M 500 134 L 500 175" stroke="#2a3860" stroke-width="1.5" fill="none" stroke-opacity="0.9"/>
+  <!-- Root → L1 right -->
+  <path d="M 500 134 L 500 155 L 778 155 L 778 175" stroke="#2a3860" stroke-width="1.5" fill="none" stroke-opacity="0.9"/>
+
+  <!-- L1 left → L2 left-left -->
+  <path d="M 222 265 L 222 285 L 111 285 L 111 305" stroke="#2a3860" stroke-width="1.5" fill="none" stroke-opacity="0.9"/>
+  <!-- L1 left → L2 left-right -->
+  <path d="M 222 265 L 222 285 L 333 285 L 333 305" stroke="#2a3860" stroke-width="1.5" fill="none" stroke-opacity="0.9"/>
+
+  <!-- L1 center → L2 center-left -->
+  <path d="M 500 265 L 500 285 L 426 285 L 426 305" stroke="#2a3860" stroke-width="1.5" fill="none" stroke-opacity="0.9"/>
+  <!-- L1 center → L2 center-right -->
+  <path d="M 500 265 L 500 285 L 574 285 L 574 305" stroke="#2a3860" stroke-width="1.5" fill="none" stroke-opacity="0.9"/>
+
+  <!-- L1 right → L2 right-left -->
+  <path d="M 778 265 L 778 285 L 704 285 L 704 305" stroke="#2a3860" stroke-width="1.5" fill="none" stroke-opacity="0.9"/>
+  <!-- L1 right → L2 right-right -->
+  <path d="M 778 265 L 778 285 L 852 285 L 852 305" stroke="#2a3860" stroke-width="1.5" fill="none" stroke-opacity="0.9"/>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  DEPTH 0 — ROOT NODE  (gold)                   -->
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <!-- glow ring -->
+  <rect x="424" y="72" width="152" height="64" rx="6" fill="#d4af37" opacity="0.1"/>
+  <!-- card bg -->
+  <rect x="426" y="74" width="148" height="60" rx="3" fill="#1b2557" stroke="#d4af37" stroke-width="0.8" stroke-opacity="0.45"/>
+  <!-- top accent bar -->
+  <rect x="426" y="74" width="148" height="2" rx="3" fill="#d4af37"/>
+  <!-- left accent strip -->
+  <rect x="426" y="76" width="3" height="58" fill="#d4af37" rx="0" style="border-bottom-left-radius:3px"/>
+  <!-- role label -->
+  <text x="437" y="91" fill="#d4af37" font-size="7.5" font-weight="700" letter-spacing="0.9">EXECUTIVE SPONSOR</text>
+  <!-- divider -->
+  <line x1="436" y1="97" x2="567" y2="97" stroke="#d4af37" stroke-width="0.4" stroke-opacity="0.3"/>
+  <!-- name -->
+  <text x="500" y="118" fill="#dde3f5" font-size="12.5" font-weight="600" text-anchor="middle" dominant-baseline="middle">Sarah Mitchell</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  DEPTH 1  (blue #4a90d9 / card #122d44)        -->
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <!-- L1-LEFT: Marcus Webb -->
+  <rect x="146" y="173" width="152" height="64" rx="6" fill="#4a90d9" opacity="0.1"/>
+  <rect x="148" y="175" width="148" height="60" rx="3" fill="#122d44" stroke="#4a90d9" stroke-width="0.8" stroke-opacity="0.45"/>
+  <rect x="148" y="175" width="148" height="2" rx="3" fill="#4a90d9"/>
+  <rect x="148" y="177" width="3" height="58" fill="#4a90d9"/>
+  <text x="159" y="192" fill="#4a90d9" font-size="7.5" font-weight="700" letter-spacing="0.9">DOMAIN OWNER</text>
+  <line x1="158" y1="198" x2="289" y2="198" stroke="#4a90d9" stroke-width="0.4" stroke-opacity="0.3"/>
+  <text x="222" y="219" fill="#dde3f5" font-size="12.5" font-weight="600" text-anchor="middle" dominant-baseline="middle">Marcus Webb</text>
+
+  <!-- L1-CENTER: Priya Nair -->
+  <rect x="424" y="173" width="152" height="64" rx="6" fill="#4a90d9" opacity="0.1"/>
+  <rect x="426" y="175" width="148" height="60" rx="3" fill="#122d44" stroke="#4a90d9" stroke-width="0.8" stroke-opacity="0.45"/>
+  <rect x="426" y="175" width="148" height="2" rx="3" fill="#4a90d9"/>
+  <rect x="426" y="177" width="3" height="58" fill="#4a90d9"/>
+  <text x="437" y="192" fill="#4a90d9" font-size="7.5" font-weight="700" letter-spacing="0.9">DOMAIN OWNER</text>
+  <line x1="436" y1="198" x2="567" y2="198" stroke="#4a90d9" stroke-width="0.4" stroke-opacity="0.3"/>
+  <text x="500" y="219" fill="#dde3f5" font-size="12.5" font-weight="600" text-anchor="middle" dominant-baseline="middle">Priya Nair</text>
+
+  <!-- L1-RIGHT: James Okafor -->
+  <rect x="702" y="173" width="152" height="64" rx="6" fill="#4a90d9" opacity="0.1"/>
+  <rect x="704" y="175" width="148" height="60" rx="3" fill="#122d44" stroke="#4a90d9" stroke-width="0.8" stroke-opacity="0.45"/>
+  <rect x="704" y="175" width="148" height="2" rx="3" fill="#4a90d9"/>
+  <rect x="704" y="177" width="3" height="58" fill="#4a90d9"/>
+  <text x="715" y="192" fill="#4a90d9" font-size="7.5" font-weight="700" letter-spacing="0.9">DOMAIN OWNER</text>
+  <line x1="714" y1="198" x2="845" y2="198" stroke="#4a90d9" stroke-width="0.4" stroke-opacity="0.3"/>
+  <text x="778" y="219" fill="#dde3f5" font-size="12.5" font-weight="600" text-anchor="middle" dominant-baseline="middle">James Okafor</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  DEPTH 2  (orange #e07b39 / card #2a1d3f)      -->
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <!-- L2-1: Chen Liu -->
+  <rect x="35" y="303" width="152" height="64" rx="6" fill="#e07b39" opacity="0.1"/>
+  <rect x="37" y="305" width="148" height="60" rx="3" fill="#2a1d3f" stroke="#e07b39" stroke-width="0.8" stroke-opacity="0.45"/>
+  <rect x="37" y="305" width="148" height="2" rx="3" fill="#e07b39"/>
+  <rect x="37" y="307" width="3" height="58" fill="#e07b39"/>
+  <text x="48" y="322" fill="#e07b39" font-size="7.5" font-weight="700" letter-spacing="0.9">DATA STEWARD</text>
+  <line x1="47" y1="328" x2="178" y2="328" stroke="#e07b39" stroke-width="0.4" stroke-opacity="0.3"/>
+  <text x="111" y="349" fill="#dde3f5" font-size="12.5" font-weight="600" text-anchor="middle" dominant-baseline="middle">Chen Liu</text>
+
+  <!-- L2-2: Aisha Kamara -->
+  <rect x="257" y="303" width="152" height="64" rx="6" fill="#e07b39" opacity="0.1"/>
+  <rect x="259" y="305" width="148" height="60" rx="3" fill="#2a1d3f" stroke="#e07b39" stroke-width="0.8" stroke-opacity="0.45"/>
+  <rect x="259" y="305" width="148" height="2" rx="3" fill="#e07b39"/>
+  <rect x="259" y="307" width="3" height="58" fill="#e07b39"/>
+  <text x="270" y="322" fill="#e07b39" font-size="7.5" font-weight="700" letter-spacing="0.9">DATA STEWARD</text>
+  <line x1="269" y1="328" x2="400" y2="328" stroke="#e07b39" stroke-width="0.4" stroke-opacity="0.3"/>
+  <text x="333" y="349" fill="#dde3f5" font-size="12.5" font-weight="600" text-anchor="middle" dominant-baseline="middle">Aisha Kamara</text>
+
+  <!-- L2-3: Ravi Patel -->
+  <rect x="350" y="303" width="152" height="64" rx="6" fill="#e07b39" opacity="0.1"/>
+  <rect x="352" y="305" width="148" height="60" rx="3" fill="#2a1d3f" stroke="#e07b39" stroke-width="0.8" stroke-opacity="0.45"/>
+  <rect x="352" y="305" width="148" height="2" rx="3" fill="#e07b39"/>
+  <rect x="352" y="307" width="3" height="58" fill="#e07b39"/>
+  <text x="363" y="322" fill="#e07b39" font-size="7.5" font-weight="700" letter-spacing="0.9">DATA STEWARD</text>
+  <line x1="362" y1="328" x2="493" y2="328" stroke="#e07b39" stroke-width="0.4" stroke-opacity="0.3"/>
+  <text x="426" y="349" fill="#dde3f5" font-size="12.5" font-weight="600" text-anchor="middle" dominant-baseline="middle">Ravi Patel</text>
+
+  <!-- L2-4: Yuki Tanaka -->
+  <rect x="498" y="303" width="152" height="64" rx="6" fill="#e07b39" opacity="0.1"/>
+  <rect x="500" y="305" width="148" height="60" rx="3" fill="#2a1d3f" stroke="#e07b39" stroke-width="0.8" stroke-opacity="0.45"/>
+  <rect x="500" y="305" width="148" height="2" rx="3" fill="#e07b39"/>
+  <rect x="500" y="307" width="3" height="58" fill="#e07b39"/>
+  <text x="511" y="322" fill="#e07b39" font-size="7.5" font-weight="700" letter-spacing="0.9">DATA STEWARD</text>
+  <line x1="510" y1="328" x2="641" y2="328" stroke="#e07b39" stroke-width="0.4" stroke-opacity="0.3"/>
+  <text x="574" y="349" fill="#dde3f5" font-size="12.5" font-weight="600" text-anchor="middle" dominant-baseline="middle">Yuki Tanaka</text>
+
+  <!-- L2-5: Diego Reyes -->
+  <rect x="628" y="303" width="152" height="64" rx="6" fill="#e07b39" opacity="0.1"/>
+  <rect x="630" y="305" width="148" height="60" rx="3" fill="#2a1d3f" stroke="#e07b39" stroke-width="0.8" stroke-opacity="0.45"/>
+  <rect x="630" y="305" width="148" height="2" rx="3" fill="#e07b39"/>
+  <rect x="630" y="307" width="3" height="58" fill="#e07b39"/>
+  <text x="641" y="322" fill="#e07b39" font-size="7.5" font-weight="700" letter-spacing="0.9">DATA STEWARD</text>
+  <line x1="640" y1="328" x2="771" y2="328" stroke="#e07b39" stroke-width="0.4" stroke-opacity="0.3"/>
+  <text x="704" y="349" fill="#dde3f5" font-size="12.5" font-weight="600" text-anchor="middle" dominant-baseline="middle">Diego Reyes</text>
+
+  <!-- L2-6: Nina Volkov -->
+  <rect x="776" y="303" width="152" height="64" rx="6" fill="#e07b39" opacity="0.1"/>
+  <rect x="778" y="305" width="148" height="60" rx="3" fill="#2a1d3f" stroke="#e07b39" stroke-width="0.8" stroke-opacity="0.45"/>
+  <rect x="778" y="305" width="148" height="2" rx="3" fill="#e07b39"/>
+  <rect x="778" y="307" width="3" height="58" fill="#e07b39"/>
+  <text x="789" y="322" fill="#e07b39" font-size="7.5" font-weight="700" letter-spacing="0.9">DATA STEWARD</text>
+  <line x1="788" y1="328" x2="919" y2="328" stroke="#e07b39" stroke-width="0.4" stroke-opacity="0.3"/>
+  <text x="852" y="349" fill="#dde3f5" font-size="12.5" font-weight="600" text-anchor="middle" dominant-baseline="middle">Nina Volkov</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  LEGEND                                        -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <rect x="16" y="440" width="10" height="10" rx="2" fill="#d4af37"/>
+  <text x="32" y="450" fill="#5a6a8a" font-size="9" letter-spacing="1">DEPTH 0 — Executive Sponsor</text>
+
+  <rect x="16" y="458" width="10" height="10" rx="2" fill="#4a90d9"/>
+  <text x="32" y="468" fill="#5a6a8a" font-size="9" letter-spacing="1">DEPTH 1 — Domain Owner</text>
+
+  <rect x="16" y="476" width="10" height="10" rx="2" fill="#e07b39"/>
+  <text x="32" y="486" fill="#5a6a8a" font-size="9" letter-spacing="1">DEPTH 2 — Data Steward</text>
+
+  <text x="984" y="510" fill="#1e2a45" font-size="8" text-anchor="end">Data Estate People Chain — Deneb / Vega Template Preview</text>
+</svg>
